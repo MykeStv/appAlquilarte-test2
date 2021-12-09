@@ -1,0 +1,57 @@
+<div class="contenedor">
+  <div class="contenido-inicio-sesion">
+    <!-- formulario para el inicio de sesion del usuario -->
+    <form
+      action=""
+      [formGroup]="formulario"
+      (ngSubmit)="verificarDatos()"
+      autocomplete="off"
+    >
+      <div class="card">
+        <!-- header -->
+        <div class="card-header">
+          <h3>INICIAR SESION</h3>
+        </div>
+        <!-- body del inicio de sesion -->
+        <div class="card-body">
+          <!-- usuario -->
+          <div class="form-element">
+            <label for="user">Username:</label>
+            <input
+              type="text"
+              id="user"
+              name="user"
+              class="form-control"
+              formControlName="username"
+              [class.is-invalid]="usernameNoValido"
+            />
+            <span *ngIf="usernameNoValido" class="text-danger">
+              Debe ingresar el username
+            </span>
+          </div>
+          <!-- contraseña -->
+          <div class="form-element">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              formControlName="password"
+              [class.is-invalid]="passwordNoValido"
+            />
+            <span *ngIf="passwordNoValido" class="text-danger">
+              Debe ingresar el password
+            </span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-registrar">Ingresar</button>
+        </div>
+      </div>
+    </form>
+    <div class="error-login" *ngIf="error">
+      ¡Los datos ingresados son incorrectos!
+    </div>
+  </div>
+</div>

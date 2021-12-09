@@ -1,0 +1,61 @@
+<div class="contenedor">
+  <div class="contenido2">
+    <div class="card">
+      <!-- encabezado de la lista de vehiculos -->
+      <div class="card-header">
+        <h3>Lista de vehiculos</h3>
+      </div>
+      <!-- cuerpo de la lista -->
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>Placa</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Tipo de vehiculo</th>
+              <th>Precio Alquiler</th>
+              <th>Acciones</th>
+              <th>Alquilar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- ciclo for para obtener los vehiculos del array -->
+            <tr *ngFor="let vehiculo of vehiculos; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ vehiculo.placa }}</td>
+              <td>{{ vehiculo.marca }}</td>
+              <td>{{ vehiculo.modelo }}</td>
+              <td>{{ vehiculo.tipo.tipo }}</td>
+              <td>${{ vehiculo.precio }}</td>
+              <td class="btn-acciones">
+                <button class="btn btn-eliminar" (click)="delete(vehiculo)">
+                  Eliminar
+                </button>
+                &nbsp;
+                <a
+                  [routerLink]="['/vehiculos-edit', vehiculo.id]"
+                  class="btn btn-actualizar"
+                >
+                  Actualizar
+                </a>
+              </td>
+              <td>
+                <a
+                  [routerLink]="['/vehiculos-alquiler', vehiculo.id]"
+                  class="btn btn-alquilar"
+                  *ngIf="vehiculo.estado == 0"
+                >
+                  Alquilar
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- footer -->
+      <div class="card-footer"></div>
+    </div>
+  </div>
+</div>

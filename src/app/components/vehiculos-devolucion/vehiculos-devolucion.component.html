@@ -1,0 +1,56 @@
+<div class="contenedor">
+  <div class="contenido2">
+    <div class="card">
+      <div class="card-header">
+        <h3>VEHICULOS EN ALQUILER</h3>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>Placa</th>
+              <th>Usuario</th>
+              <th>Cliente</th>
+              <th>Fecha Alquiler</th>
+              <th>Fecha Devolución</th>
+              <th>Precio total</th>
+              <th>Info</th>
+              <th>Devolución</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let alquiler of alquileres; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ alquiler.idVehiculo.placa }}</td>
+              <td>{{ alquiler.idUser.nombre }}</td>
+              <td>{{ alquiler.idCliente.nombre }}</td>
+              <td>{{ alquiler.fechaAlq }}</td>
+              <td>{{ alquiler.fechaDev }}</td>
+              <td>${{ alquiler.precioTotal }}</td>
+              <td>
+                <a
+                  [routerLink]="[
+                    '/vehiculos-devolucion/alquiler-info',
+                    alquiler.id
+                  ]"
+                  class="btn btn-info"
+                  >+</a
+                >
+              </td>
+              <td>
+                <button
+                  class="btn btn-devolver"
+                  (click)="devolverVehiculo(alquiler)"
+                >
+                  Devolver
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

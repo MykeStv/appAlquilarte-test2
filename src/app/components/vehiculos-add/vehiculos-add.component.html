@@ -1,0 +1,121 @@
+<div class="contenedor">
+  <div class="contenido2">
+    <form
+      action=""
+      [formGroup]="formulario"
+      (ngSubmit)="ingresarVehiculo()"
+      autocomplete="off"
+    >
+      <div class="card">
+        <!-- Encabezado -->
+        <div class="card-header">
+          <h3>INGRESAR UN VEHICULO</h3>
+        </div>
+        <!-- Body del ingreso -->
+        <div class="card-body">
+          <div class="form-element">
+            <label for="placa">Placa:</label>
+            <input
+              type="text"
+              id="placa"
+              name="placa"
+              class="form-control"
+              formControlName="placa"
+            />
+            <div *ngIf="placaNoValido" class="text-danger">
+              Debe ingresar la placa
+            </div>
+          </div>
+          <div class="form-element">
+            <label for="marca">Marca:</label>
+            <input
+              type="text"
+              id="marca"
+              name="marca"
+              class="form-control"
+              formControlName="marca"
+            />
+            <div *ngIf="marcaNoValido" class="text-danger">
+              Debe ingresar la marca
+            </div>
+          </div>
+
+          <div class="form-element">
+            <label for="modelo">Modelo:</label>
+            <input
+              type="number"
+              id="modelo"
+              name="modelo"
+              class="form-control"
+              formControlName="modelo"
+            />
+            <div *ngIf="modeloNoValido" class="text-danger">
+              Debe ingresar la modelo
+            </div>
+          </div>
+          <!-- revisar el nombre tipo -->
+          <div class="form-element">
+            <label for="tipo">Tipo Vehiculo:</label>
+            <input
+              type="number"
+              id="tipo"
+              name="tipo"
+              class="form-control"
+              formControlName="tipo"
+            />
+            <div *ngIf="tipoNoValido" class="text-danger">
+              Debe ingresar la tipo
+            </div>
+          </div>
+
+          <div class="form-element">
+            <label for="puertas">Numero de puertas:</label>
+            <input
+              type="number"
+              id="puertas"
+              name="puertas"
+              class="form-control"
+              formControlName="puertas"
+            />
+            <div *ngIf="puertasNoValido" class="text-danger">
+              Debe ingresar la puertas
+            </div>
+          </div>
+
+          <div class="form-element">
+            <label for="puestos">Numero de puestos:</label>
+            <input
+              type="number"
+              id="puestos"
+              name="puestos"
+              class="form-control"
+              formControlName="puestos"
+            />
+            <div *ngIf="puestosNoValido" class="text-danger">
+              Debe ingresar la puestos
+            </div>
+          </div>
+
+          <div class="form-element">
+            <label for="precio">Precio por dia:</label>
+            <input
+              type="number"
+              id="precio"
+              name="precio"
+              class="form-control"
+              formControlName="precio"
+            />
+            <div *ngIf="precioNoValido" class="text-danger">
+              Debe ingresar la precio
+            </div>
+          </div>
+        </div>
+        <!-- Footer del ingreso -->
+        <div class="card-footer">
+          <button class="btn-cancelar">Cancelar</button>
+          <button type="submit" class="btn-ingresar">Ingresar Vehiculo</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

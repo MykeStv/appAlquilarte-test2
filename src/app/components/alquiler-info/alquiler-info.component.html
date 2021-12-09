@@ -1,0 +1,100 @@
+<div class="contenedor">
+  <div class="contenido2">
+    <div class="card">
+      <div class="card-header">
+        <h3>INFORMACION DEL ALQUILER</h3>
+      </div>
+      <div class="card-body">
+        <div class="sec-info">
+          <h4>Informacion del vehiculo</h4>
+          <!-- inicia la info del vehiculo -->
+          <div class="info-vehiculo">
+            <div class="info-header">
+              Placa
+              <div class="info-cont">{{ alquiler.idVehiculo.placa }}</div>
+            </div>
+            <div class="info-header">
+              Marca
+              <div class="info-cont">{{ alquiler.idVehiculo.marca }}</div>
+            </div>
+            <div class="info-header">
+              Modelo
+              <div class="info-cont">{{ alquiler.idVehiculo.modelo }}</div>
+            </div>
+            <div class="info-header">
+              Tipo vehiculo
+              <div class="info-cont">{{ alquiler.idVehiculo.tipo.tipo }}</div>
+            </div>
+            <div class="info-header">
+              Puertas
+              <div class="info-cont">{{ alquiler.idVehiculo.puertas }}</div>
+            </div>
+            <div class="info-header">
+              Puestos
+              <div class="info-cont">{{ alquiler.idVehiculo.puestos }}</div>
+            </div>
+            <div class="info-header">
+              Precio/dia
+              <div class="info-cont">${{ alquiler.idVehiculo.precio }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec-info">
+          <h4>Informacion del cliente</h4>
+          <!-- inicia la info del vehiculo -->
+          <div class="info-cliente">
+            <div class="info-header">
+              Cedula
+              <div class="info-cont">{{ alquiler.idCliente.cc }}</div>
+            </div>
+            <div class="info-header">
+              Nombre
+              <div class="info-cont">{{ alquiler.idCliente.nombre }}</div>
+            </div>
+            <div class="info-header">
+              Direccion
+              <div class="info-cont">{{ alquiler.idCliente.direccion }}</div>
+            </div>
+            <div class="info-header">
+              Telefono
+              <div class="info-cont">{{ alquiler.idCliente.telefono }}</div>
+            </div>
+            <div class="info-header">
+              Correo
+              <div class="info-cont">{{ alquiler.idCliente.correo }}</div>
+            </div>
+          </div>
+        </div>
+        <!-- informacion del alquiler -->
+        <div class="sec-info">
+          <h4>Informacion del alquiler</h4>
+          <!-- inicia la info del vehiculo -->
+          <div class="info-cliente">
+            <div class="info-header">
+              Userio del alquiler
+              <div class="info-cont">{{ alquiler.idUser.user }}</div>
+            </div>
+            <div class="info-header">
+              Fecha Alquiler
+              <div class="info-cont">{{ alquiler.fechaAlq }}</div>
+            </div>
+            <div class="info-header">
+              Fecha Devolucion
+              <div class="info-cont">{{ alquiler.fechaDev }}</div>
+            </div>
+            <div class="info-header">
+              Precio Total
+              <div class="info-cont">${{ alquiler.precioTotal }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a [routerLink]="['/vehiculos-devolucion']" class="btn btn-regresar">
+          Regresar
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

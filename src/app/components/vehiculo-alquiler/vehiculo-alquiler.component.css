@@ -1,0 +1,94 @@
+.card-body .sec-info {
+  background: var(--color-lightdark3);
+  border-radius: 5px;
+}
+
+.card-body .sec-info h4 {
+  text-align: center;
+  padding: 10px;
+}
+
+.card-body .sec-info .info-vehiculo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+.info-vehiculo .info-header {
+  text-align: center;
+  width: 220px;
+  margin: 5px 10px;
+  padding: 10px;
+  background: var(--color-lightdark2);
+  border-radius: 10px;
+}
+
+.info-vehiculo .info-cont {
+  padding: 8px 0;
+  background: #fff;
+  border-radius: 20px;
+}
+
+/* estilo para el formulario de los clientes */
+.datos-cliente {
+  padding: 10px;
+  margin-top: 10px;
+}
+.datos-cliente h3 {
+  text-align: center;
+}
+.form-cliente {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.form-cliente .form-element {
+  margin: 1%;
+}
+.form-element#form-cc,
+.form-element#form-telefono {
+  width: 15%;
+}
+.form-element#form-nombre {
+  width: 78%;
+}
+
+.form-element#form-direccion,
+.form-element#form-correo {
+  width: 38%;
+}
+.form-element input {
+  margin-bottom: 12px;
+}
+/* estilo para los botones */
+.card-footer {
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+.card-footer button,
+.card-footer a {
+  text-align: center;
+  width: 48.5%;
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 0.2rem;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+.btn-cancelar {
+  background: var(--color-cancelar);
+}
+.btn-cancelar:hover {
+  background: var(--color-cancelar2);
+}
+.btn-ingresar {
+  background: var(--color-turq);
+}
+.btn-ingresar:hover {
+  background: var(--color-brightTurq);
+}

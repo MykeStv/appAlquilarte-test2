@@ -1,0 +1,94 @@
+<div class="contenedor">
+  <div class="contenido">
+    <!-- formulario para el registro de datos del usuario -->
+    <form
+      action=""
+      [formGroup]="formulario"
+      (ngSubmit)="guardarDatos()"
+      autocomplete="off"
+    >
+      <div class="card">
+        <!-- header -->
+        <div class="card-header">
+          <h3>REGISTRO DE USUARIO</h3>
+        </div>
+        <!-- body del registro -->
+        <div class="card-body">
+          <!-- nombre del usuario -->
+          <div class="form-element">
+            <label for="nombre">Nombre de usuario:</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              class="form-control"
+              formControlName="nombre"
+              [class.is-invalid]="nombreNoValido"
+            />
+            <span *ngIf="nombreNoValido" class="text-danger">
+              Debe ingresar el nombre de usuario
+            </span>
+          </div>
+          <!-- tipo de usuario -->
+          <div class="form-element">
+            <label for="tipo">Tipo de usuario:</label>
+            <input
+              type="text"
+              id="tipo"
+              name="tipo"
+              class="form-control"
+              formControlName="tipoUsuario"
+              [class.is-invalid]="tipoNoValido"
+            />
+            <span *ngIf="tipoNoValido" class="text-danger">
+              Debe ingresar el tipo de usuario
+            </span>
+          </div>
+          <!-- usuario -->
+          <div class="form-element">
+            <label for="user">Username:</label>
+            <input
+              type="text"
+              id="user"
+              name="user"
+              class="form-control"
+              formControlName="username"
+              [class.is-invalid]="userNoValido"
+            />
+            <span *ngIf="userNoValido" class="text-danger">
+              Debe ingresar el username
+            </span>
+          </div>
+          <!-- contraseña -->
+          <div class="form-element">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              formControlName="password"
+              [class.is-invalid]="passwordNoValido"
+            />
+            <span *ngIf="passwordNoValido" class="text-danger">
+              Debe ingresar el password
+            </span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-registrar">registrar</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- validacion de los datos al submit -->
+    <div *ngIf="error" class="error-registro">
+      Los datos ingresados son incorrectos
+    </div>
+    <div *ngIf="ingresado" class="alert-info">
+      su registro se ha realizado con exito
+      <br />
+      inicie sesion <a [routerLink]="['/login']" class="inicie-aqui">aqui</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,196 @@
+<div class="contenedor">
+  <div class="contenido2">
+    <form
+      action=""
+      [formGroup]="formularioC"
+      (ngSubmit)="alquilarVehiculo()"
+      autocomplete="off"
+    >
+      <div class="card">
+        <div class="card-header">
+          <h3>Alquiler de Vehiculo</h3>
+        </div>
+
+        <div class="card-body">
+          <div class="sec-info">
+            <h4>Informacion del vehiculo</h4>
+            <!-- inicia la info del vehiculo -->
+            <div class="info-vehiculo">
+              <div class="info-header">
+                Placa
+                <div class="info-cont">{{ vehiculo.placa }}</div>
+              </div>
+              <div class="info-header">
+                Marca
+                <div class="info-cont">{{ vehiculo.marca }}</div>
+              </div>
+              <div class="info-header">
+                Modelo
+                <div class="info-cont">{{ vehiculo.modelo }}</div>
+              </div>
+              <div class="info-header">
+                Tipo vehiculo
+                <div class="info-cont">{{ vehiculo.tipo.tipo }}</div>
+              </div>
+              <div class="info-header">
+                Puertas
+                <div class="info-cont">{{ vehiculo.puertas }}</div>
+              </div>
+              <div class="info-header">
+                Puestos
+                <div class="info-cont">{{ vehiculo.puestos }}</div>
+              </div>
+              <div class="info-header">
+                Precio/dia
+                <div class="info-cont">${{ vehiculo.precio }}</div>
+              </div>
+            </div>
+            <!-- finaliza la info del vehiculo -->
+          </div>
+
+          <!-- Inicia la seccion de datos del cliente -->
+          <div class="datos-cliente">
+            <h3>Datos del cliente</h3>
+            <div class="form-cliente">
+              <div class="form-element" id="form-cc">
+                <label for="cc">Cedula:</label>
+                <input
+                  type="text"
+                  id="cc"
+                  name="cc"
+                  class="form-control"
+                  formControlName="cc"
+                  #cc
+                  [class.is-invalid]="ccNoValido"
+                />
+                <div *ngIf="ccNoValido" class="text-danger">
+                  Debe ingresar la cedula
+                </div>
+              </div>
+
+              <div class="form-element" id="form-nombre">
+                <label for="nombre">Nombre:</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  class="form-control"
+                  formControlName="nombre"
+                  #nombre
+                />
+                <div *ngIf="nombreNoValido" class="text-danger">
+                  Debe ingresar el nombre
+                </div>
+              </div>
+
+              <div class="form-element" id="form-direccion">
+                <label for="direccion">Direccion:</label>
+                <input
+                  type="text"
+                  id="direccion"
+                  name="direccion"
+                  class="form-control"
+                  formControlName="direccion"
+                  #direccion
+                />
+                <div *ngIf="direccionNoValido" class="text-danger">
+                  Debe ingresar la direccion
+                </div>
+              </div>
+
+              <div class="form-element" id="form-telefono">
+                <label for="telefono">Telefono:</label>
+                <input
+                  type="text"
+                  id="telefono"
+                  name="telefono"
+                  class="form-control"
+                  formControlName="telefono"
+                  #telefono
+                />
+                <div *ngIf="telefonoNoValido" class="text-danger">
+                  Debe ingresar el telefono
+                </div>
+              </div>
+              <div class="form-element" id="form-correo">
+                <label for="correo">Correo:</label>
+                <input
+                  type="text"
+                  id="correo"
+                  name="correo"
+                  class="form-control"
+                  formControlName="correo"
+                  #correo
+                />
+                <div *ngIf="correoNoValido" class="text-danger">
+                  Debe ingresar el correo
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-vehiculo">
+            <h3>Vehiculo</h3>
+            <div class="form-element">
+              <label for="fechaAlq">Fecha de alquiler:</label>
+              <input
+                type="date"
+                id="fechaAlq"
+                name="fechaAlq"
+                class="form-control"
+                formControlName="fechaAlq"
+                #fechaAlq
+                [value]="fecha1"
+                (change)="changeFecha1($event)"
+              />
+              <div *ngIf="fechaAlqNoValido" class="text-danger">
+                Debe ingresar la fecha de alquiler
+              </div>
+            </div>
+            <div class="form-element">
+              <label for="fechaDev">Fecha de devolucion:</label>
+              <input
+                type="date"
+                id="fechaDev"
+                name="fechaDev"
+                class="form-control"
+                formControlName="fechaDev"
+                #fechaDev
+                [value]="fecha2"
+                (change)="changeFecha2($event)"
+              />
+              <div *ngIf="fechaDevNoValido" class="text-danger">
+                Debe ingresar la fecha de devolucion
+              </div>
+            </div>
+            <div class="form-element">
+              <label for="precioTotal">Precio total:</label>
+              <input
+                type="number"
+                id="precioTotal"
+                name="precioTotal"
+                class="form-control"
+                formControlName="precioTotal"
+                #precioTotal
+                [value]="precioVehiculo"
+              />
+              <div *ngIf="precioNoValido.invalid">
+                <div
+                  *ngIf="precioNoValido.errors?.['required']"
+                  class="text-danger"
+                >
+                  Debe ingresar el precio
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <a class="btn-cancelar" (click)="cancelar()">Cancelar</a>
+          <button type="submit" class="btn-ingresar">Alquilar Vehiculo</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
