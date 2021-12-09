@@ -26,7 +26,7 @@ const httpOptions = {
 export class ApiService {
 
   //url para consultar el api
-  url:string = "http://localhost:8080/";
+  url:string = "https://alquilarte-test3.herokuapp.com/";
 
   //haciendo un observable para el refresh
   private _refresh$ = new Subject<void> ();
